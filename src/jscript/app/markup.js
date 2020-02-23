@@ -1,7 +1,8 @@
 import resultCountry from '../templates/resultCountry.hbs';
 import resultCountryList from '../templates/resultCountryList.hbs';
 import fetchCountries from './fetchCountries';
-import PNotify from 'node_modules/pnotify/dist/es/PNotify.js';
+import PNotify from 'pnotify/dist/es/PNotify';
+const debounce = require('lodash.debounce');
 
 const jsResult = document.querySelector('.js-result');
 const input = document.getElementById('search-input');
@@ -29,4 +30,4 @@ function markup(e) {
     });
 }
 
-input.addEventListener('input', markup);
+input.addEventListener('input', debounce(markup, 500));
