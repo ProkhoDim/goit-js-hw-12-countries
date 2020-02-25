@@ -17,6 +17,11 @@ body {
   transition: color 150ms ease-out, background-color 150ms ease-out;
 }
 
+#search-input {
+  width: 500px;
+  font-size: 24px;
+}
+
 .js-result {
   width: 600px;
   padding: 10px;
